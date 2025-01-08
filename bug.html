@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    document.getElementById('myDiv').style.display = 'none';
+    //This hides the div, but the following line attempts to add content 
+    //after it's been hidden, which might not render correctly in all browsers.
+    document.getElementById('myDiv').innerHTML += "<p>This text might not show.</p>";
+  </script>
+</body>
+</html>
